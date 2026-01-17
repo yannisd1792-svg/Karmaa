@@ -39,11 +39,11 @@ pouvant résulter de l’accès ou de l’utilisation de ce site.
 body {
     margin: 0;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 50px; /* décalage pour laisser de la place au titre */
     font-family: 'BBH Hegarty', sans-serif;
-    background: #000000;
     background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(59, 59, 59) 100%);
     height: 100%;
+    color: white;
 }
 
 html{
@@ -51,6 +51,86 @@ html{
     scroll-behavior: smooth;
 }
 
+/* Conteneur des cartes */
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px; /* décalage supplémentaire si nécessaire */
+}
+
+/* Cartes carrées */
+
+
+.card {
+    width: 220px;
+    height: 220px;
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255,255,255,0.2);
+
+    display: flex;
+    flex-direction: column;      /* NOUVEAU */
+    justify-content: space-between; /* NOUVEAU */
+    align-items: center;          /* OK */
+
+    padding: 15px;                /* NOUVEAU */
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* Titre centré */
+.card-title {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 200;
+}
+
+.card-desc {
+    font-size: 14px;
+    text-align: center;
+    opacity: 0.85;
+    font-weight: 200;
+}
+
+
+/* Texte centré verticalement */
+.card p {
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+/* Boutons remplacés par des div */
+.card-btn {
+    padding: 8px 15px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: 'BBH Hegarty', sans-serif;
+    user-select: none; /* empêche la sélection du texte */
+    text-align: center;
+}
+
+/* Hover effet */
+.card-btn:hover {
+    background-color: #000000;
+    color: white;
+    transform: translateY(-2px); /* léger effet interactif */
+}
 
 
 
@@ -99,7 +179,9 @@ h1 {
     transition: all 0.3s ease;
 }
 
-
+a.card-btn{
+    text-decoration: none;
+}
 
 
 /* ========================= */
@@ -246,6 +328,9 @@ a {
     text-align: center;
     color: #aaa;
 }
+
+
+
 
 /* ========================= */
 /* CONTENU PRINCIPAL          */
